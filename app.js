@@ -84,25 +84,303 @@
 
 //Problem 4 -	Create an application that prompts the user for 5 numbers. Ask them to comma delimit each number so you get 1,2,3,4,5 for example. Store the result of that input in a variable and then find the largest and smallest numbers in that list. Display both of those numbers within a console window.
 
-  // var numbersArray = prompt('Fam, enter 5 numbers that are separated by commas here.');
-  // var numbersArrayResponse = numbersArray.split(',');
-  // //var intConversion = parseInt(numbersArrayResponse);
-  // var numbersArrayFinal = (Number(numbersArrayResponse));
-  // console.log("The largest number you entered was: " + Math.max(numbersArrayFinal) + "\nThe lowest number you entered was: " + Math.min(numbersArrayFinal));
-
+// var numbersArray = prompt('Fam, enter 5 numbers that are separated by commas here.');
+// var numbersArrayResponse = numbersArray.split(',');
+// var firstNumber = parseInt(numbersArrayResponse[0]);
+// var secondNumber = parseInt(numbersArrayResponse[1]);
+// var thirdNumber = parseInt(numbersArrayResponse[2]);
+// var fourthNumber = parseInt(numbersArrayResponse[3]);
+// var fifthNumber = parseInt(numbersArrayResponse[4]);
+// console.log("This largest number you entered was: " + Math.max(firstNumber,
+//   secondNumber, thirdNumber, fourthNumber, fifthNumber) + " and the lowest number you entered was: " + Math.min(firstNumber,
+//   secondNumber, thirdNumber, fourthNumber, fifthNumber));
 
 //Problem 5 -	Create an application that prompts the user for a number. Now find the square root of that number and display the result within a console window.
 
 // var number = prompt("Give me a number and I'll give you the square root in the console.");
 // console.log(Math.sqrt(number));
 
-//Part 2 - Date and Date Functions (6 points)
+//////////////////////Part 2 - Date and Date Functions (6 points)
+
 //Problem 6 -	Create an application that gets the current date. Display that result within the console window.
 
-
+// var getMyDate = new Date();
+// console.log(getMyDate);
 
 //Problem 7 -	Create an application that gets the number of days in a month. Display that result within the console window.
+
+// var daysInMonth = new Date(2017,1,0);
+// console.log(daysInMonth.getDate());
+
 //Problem 8 -	Create an application that gets the month name from a particular date. Display that result within the console window.
+
+// var askDate = prompt('Enter a date in the form of MM/DD/YYYY');
+// var dateArray = askDate.split('/');
+// var month = dateArray[0];
+// var displayMonth;
+// switch (month) {
+//   case '01':
+//     displayMonth = "January";
+//     break;
+//   case '02':
+//     displayMonth = "February";
+//     break;
+//   case '03':
+//     displayMonth = "March";
+//     break;
+//   case '04':
+//     displayMonth = "April";
+//     break;
+//   case '05':
+//     displayMonth = "May";
+//     break;
+//   case '06':
+//     displayMonth = "June";
+//     break;
+//   case '07':
+//     displayMonth = "July";
+//     break;
+//   case '08':
+//     displayMonth = "August";
+//     break;
+//   case '09':
+//     displayMonth = "September";
+//     break;
+//   case '10':
+//     displayMonth = "October";
+//     break;
+//   case '11':
+//     displayMonth = "November";
+//     break;
+//   case '12':
+//     displayMonth = "December";
+//     break;
+//   default:
+//     displayMonth = "There seems to be an error, reload the window and try again using the format MM/DD/YYYY and don't forget the zeros!";
+// }
+// console.log('Your date is a date in ' + displayMonth);
+
 //Problem 9 -	Create an application that tests whether a date is a weekend. Display that result within the console window.
+
+// var askDate = prompt('Enter a date in the form of MM/DD/YYYY');
+// var dateArray = askDate.split('/');
+// var month = dateArray[0];
+// var day = dateArray[1];
+// var year = dateArray[2];
+// var date = new Date(year, month, day);
+// var weekDay = date.getDay(day);
+// console.log(weekDay); //checks weekday from 0-6 from day object to corresponding weekday
+// if (weekDay == 0 || weekDay == 6) {
+//   console.log("Hooray for the freakin' weekend!");
+// } else {
+//   console.log("Darn...it's another weekday...");
+// }
+
 //Problem 10 - Create an application that gets yesterday’s day of the week. For instance, if today is Tuesday, the console window should display Monday.
+
+// var date = new Date();
+// var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// console.log(days[date.getDay() - 1]);
+
 //Problem 11 -	Create an application that gets the current day of the week. The twist here is that I want only the first letter of the day. If today is Tuesday, the letter T should be displayed in the console window.
+
+// var date = new Date();
+// var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+// var today = days[date.getDay()];
+// var todaysFirstLetter = today.charAt(0);
+// console.log(todaysFirstLetter);
+
+///////////////////////////Part 3 - Conditional Logic and Looping Operations (4 points)
+
+//Problem 12 - Create an application that accepts two integers within two separate prompts. Then, display only the larger of the two within the console window.
+
+// var intFirst = prompt("Type in a number");
+// var intSecond = prompt("Type in another number");
+// if (intFirst > intSecond) {
+//   window.console.log(intFirst + " was the larger number");
+// } else if (intFirst < intSecond) {
+//   window.console.log(intSecond + " was the larger number");
+// } else {
+//   window.console.log("Both numbers are the same!");
+// }
+
+//Problem 13 - Create an application that records the marks for the following five students. Then, these marks are used to determine the corresponding grade. All 5 students and their grades should be displayed within the console window.
+
+// var strStudents = {
+//   name: ["Ursula", "Paul", "Henry", "Tabitha", "Lucy"],
+//   grade: [80, 77, 88, 95, 68]
+// };
+// for (var i = 0; i < 5; i++) {
+//   if (strStudents.grade[i] <= 100 && strStudents.grade[i] >= 90) {
+//     window.console.log(strStudents.name[i] + " has a final score of " + strStudents.grade[i] + " so the student received an A.");
+//   } else if (strStudents.grade[i] < 90 && strStudents.grade[i] >= 80) {
+//     window.console.log(strStudents.name[i] + " has a final score of " + strStudents.grade[i] + " so the student received a B.");
+//   } else if (strStudents.grade[i] < 80 && strStudents.grade[i] >= 70) {
+//     window.console.log(strStudents.name[i] + " has a final score of " + strStudents.grade[i] + " so the student received a C.");
+//   } else if (strStudents.grade[i] < 70 && strStudents.grade[i] >= 60) {
+//     window.console.log(strStudents.name[i] + " has a final score of " + strStudents.grade[i] + " so the student received a D.");
+//   } else {
+//     window.console.log(strStudents.name[i] + " has a final score of " + strStudents.grade[i] + " so the student received an F.");
+//   }
+// }
+
+//Problem 14 - Create a JavaScript for loop that iterates from 1 to 15. Each iteration should check if the current number is odd or even, and display a message within the console window.
+
+// for (var i = 1; i <= 15; i++) {
+//   if (i % 2 == 0) {
+//     console.log(i + " is even");
+//   } else {
+//     console.log(i + " is odd");
+//   }
+// }
+
+//Problem 15 - FizzBuzz Application
+
+// for (var i = 1; i <= 100; i++) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     console.log("FizzBuzz");
+//   } else if (i % 3 === 0) {
+//     console.log("Fizz");
+//   } else if (i % 5 === 0) {
+//     console.log("Buzz");
+//   } else {
+//     console.log(i);
+//   }
+// }
+
+////////////////////////////////Part 4 - The Hitchhiker's Guide to the Galaxy Game
+
+// //Step 1
+// var areYouReady = confirm("\'The Hitchhiker's Guide to the Galaxy\'\nAre you ready to play?");
+// if (areYouReady == true) {
+//   var yey = confirm("Awesome, our hero is waiting!");
+// } else {
+//   var nay = confirm("Too bad, we’re going to play anyway because our hero desperately needs your help!");
+// }
+//
+// //Step 2
+// var storyLine = alert("You are in a dark, dingy, and humid cave searching for the lost treasure of Captain Chingadera. You are disoriented, lost, hungry and extremely thirsty. You see a speck of light in the distance ahead of you, something shimmering to your right, and the sound of running water to your left. Your back is against the wall…");
+//
+// //Step 3
+// var whichDirection = prompt("Which direction would you like to head (please enter forward, left, or right).").toLowerCase();
+//
+// //Step 4
+// switch (whichDirection) {
+//   case "forward":
+//     alert("You walk about 100 yards and safely make your way out of the cave.");
+//     break;
+//   case "left":
+//     alert("Your thirst has gotten the better of you. You trip on a rock, hit your head, and fall into a pool of water and drown.");
+//     break;
+//   case "right":
+//     alert("You found the gold! You walk into a small room and see thousands of gold coins, jewels, chalices, and more. You jump into the pile of gold in celebration and immediately a hidden door slams down and traps you in the room forever.");
+//     break;
+//   default:
+//     alert("The ghost of Captain Chingadera has condemned you to eternal damnation and you shall now burn in the hot excoriation for lifeless lowlifes for not choosing the correct option...loser.");
+// }
+//
+// //Step 5
+// var gameRating = prompt("How did you like my game?\n Please give it a rating from 1-10");
+// //var numGameRating = parseInt(gameRating);
+// var checkRating = isNaN(gameRating);
+// console.log(checkRating); //isNaN check
+//
+// //Step 6
+// if (checkRating || gameRating < 1 || gameRating > 10) {
+//   alert("Thank you, we will continue to make improvements to the game!");
+// }
+//
+// //Step 5 Cont..
+// if (gameRating >= 6 && gameRating <= 10) {
+//   alert("Thank you, we will continue to make improvements to the game!");
+// } else if (gameRating >= 1 && gameRating <= 5) {
+//   alert("Whatever, you weren’t very good at this game anyway!");
+// }
+
+
+
+////////////////////////Part 5 - The Coin Flip Game
+
+// //Step 1
+// var coinFlip = Math.round(Math.random()); //I rounded this to make it equal odds
+// //Step 2
+// var choice = prompt("Choose Heads or Tails.").toLowerCase();
+// //Step 3
+// if (coinFlip == 1) {
+//   coinFlip = "tails";
+// } else if (coinFlip == 0) {
+//   coinFlip = "heads";
+// }
+// //Step 4
+// if (coinFlip == "heads" && choice == "heads") {
+//   alert('The flip was heads and you chose heads...you win!');
+// }
+// //Step 5
+// else if (coinFlip == "heads" && choice == "tails") {
+//   alert('The flip was heads but you chose tails...you lose!');
+// }
+// //Step 6
+// else if (coinFlip == "tails" && choice == "heads") {
+//   alert('The flip was tails but you chose heads...you lose!');
+// }
+// //Step 7
+// else if (coinFlip == "tails" && choice == "tails") {
+//   alert('The flip was tails and you chose tails...you win!');
+// }
+// //Step 8 - I actually did this before reading all of the steps. Check step 2
+
+
+////////////////////////Part 6 - The Coin Flip Game Redux
+
+// //Step 1
+// var coinFlip;
+// //Step 2
+// for (var i = 0; i < 10; i++) {
+//   //Step 3
+//   coinFlip = Math.round(Math.random());
+//   //Step 4
+//   if (coinFlip == 0) {
+//     console.log("Heads");
+//   } else if (coinFlip == 1) {
+//     console.log("Tails");
+//   }
+// }
+
+
+///////////////////////////Part 7 - The Coin Flip Streak Game
+
+// //Step 1
+// var coinFlip;
+//
+// //Step 2
+// do {
+//   //Step 3
+//   coinFlip = Math.round(Math.random());
+//   //Step 4
+//   if (coinFlip == 0) {
+//     console.log("Heads");
+//   } else if (coinFlip == 1) {
+//     console.log("Tails");
+//   }
+//   //Step 5
+// } while (coinFlip != 1);
+
+
+///////////////////////////Part 8 - Looping a Triangle - This sucked. Took forever to figure out.
+
+// var hash = " ";
+// for (var i = 0; i < 7; i++) {
+//   hash += "#";
+//   console.log(hash);
+// }
+
+
+///////////////////////////////Part 9 - Odd or Even?
+
+// for (var i = 0; i <= 15; i++) {
+//   if (i % 2 == 0) {
+//     console.log(i + " is even");
+//   } else {
+//     console.log(i + " is odd");
+//   }
+// }
